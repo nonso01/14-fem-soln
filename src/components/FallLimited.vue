@@ -2,18 +2,24 @@
 import { Plus, Minus, ShoppingCart } from "lucide-vue-next";
 // import { ref } from "vue";
 
-const maxQuantity = 20;
+const props = defineProps({
+  handlePlus: Function,
+  handleMinus: Function,
+  handleAddToCart: Function,
+  quantity: Number,
+});
+
 const strokeColor = "#ff7d1a";
 </script>
 
 <template>
-  <div class="f-l flex column ">
-    <div class="f-l-h flex column bd">
+  <div class="f-l flex column">
+    <div class="f-l-h flex column">
       <h4>Sneaker Company</h4>
       <h1>Fall Limited Edition Sneakers</h1>
     </div>
 
-    <div class="f-l-p flex column bd">
+    <div class="f-l-p flex column">
       <p>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
@@ -30,9 +36,9 @@ const strokeColor = "#ff7d1a";
 
     <div class="f-l-b flex">
       <div class="quantity flex">
-        <Plus :stroke="strokeColor" stroke-width="3" />
-        <span> {{ maxQuantity }}</span>
-        <Minus :stroke="strokeColor" stroke-width="3" />
+        <Plus :stroke="strokeColor" stroke-width="3" @click="handlePlus" />
+        <span> {{ quantity }}</span>
+        <Minus :stroke="strokeColor" stroke-width="3" @click="handleMinus" />
       </div>
       <div class="add flex">
         <ShoppingCart stroke-width="2.5" />
@@ -83,7 +89,7 @@ const strokeColor = "#ff7d1a";
     border-radius: 5px;
   }
   .f-l-h {
-    flex-grow: 0.1;
+    flex-grow: 0.05;
     justify-content: space-between;
   }
 
@@ -116,11 +122,11 @@ const strokeColor = "#ff7d1a";
       flex-grow: 0.3;
       justify-content: space-between;
       align-items: center;
-      padding-inline: 1%;
       background-color: var(--light-grayish-blue);
       border-radius: 0.5rem;
       svg {
         cursor: pointer;
+        margin-inline: 5%;
       }
     }
 
@@ -130,6 +136,7 @@ const strokeColor = "#ff7d1a";
       align-items: center;
       background-color: var(--orange);
       border-radius: 0.5rem;
+      cursor: pointer;
       svg,
       span {
         margin-inline: 5px;
