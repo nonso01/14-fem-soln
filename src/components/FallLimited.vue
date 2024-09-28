@@ -1,18 +1,19 @@
 <script setup>
-import { Plus, Minus } from "lucide-vue-next";
+import { Plus, Minus, ShoppingCart } from "lucide-vue-next";
 // import { ref } from "vue";
 
 const maxQuantity = 20;
+const strokeColor = "#ff7d1a";
 </script>
 
 <template>
-  <div class="f-l flex bd">
-    <div class="f-l-h flex">
+  <div class="f-l flex column ">
+    <div class="f-l-h flex column bd">
       <h4>Sneaker Company</h4>
       <h1>Fall Limited Edition Sneakers</h1>
     </div>
 
-    <div class="f-l-p flex">
+    <div class="f-l-p flex column bd">
       <p>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
@@ -27,13 +28,14 @@ const maxQuantity = 20;
       </div>
     </div>
 
-    <div class="f-l-b">
-      <div class="quantity">
-        <Plus stroke="#ff7d1a" />
+    <div class="f-l-b flex">
+      <div class="quantity flex">
+        <Plus :stroke="strokeColor" stroke-width="3" />
         <span> {{ maxQuantity }}</span>
-        <Minus stroke="#ff7d1a" />
+        <Minus :stroke="strokeColor" stroke-width="3" />
       </div>
-      <div class="add">
+      <div class="add flex">
+        <ShoppingCart stroke-width="2.5" />
         <span>Add to cart</span>
       </div>
     </div>
@@ -46,7 +48,6 @@ const maxQuantity = 20;
   width: 26%;
   height: 60dvh;
 
-  flex-direction: column;
   justify-content: space-evenly;
 
   h1 {
@@ -83,15 +84,11 @@ const maxQuantity = 20;
   }
   .f-l-h {
     flex-grow: 0.1;
-
-    flex-direction: column;
     justify-content: space-between;
   }
-  .f-l-p {
-    /* height: 30%; */
-    flex-grow: 0.2;
 
-    flex-direction: column;
+  .f-l-p {
+    flex-grow: 0.2;
     justify-content: space-between;
 
     .prices {
@@ -103,6 +100,40 @@ const maxQuantity = 20;
       p:not(.strike) {
         width: 30%;
         justify-content: space-between;
+      }
+    }
+  }
+
+  .f-l-b {
+    flex-grow: 0.15;
+    justify-content: space-between;
+
+    span {
+      font-weight: bold;
+    }
+
+    .quantity {
+      flex-grow: 0.3;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 1%;
+      background-color: var(--light-grayish-blue);
+      border-radius: 0.5rem;
+      svg {
+        cursor: pointer;
+      }
+    }
+
+    .add {
+      flex-grow: 0.5;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--orange);
+      border-radius: 0.5rem;
+      svg,
+      span {
+        margin-inline: 5px;
+        color: var(--very-dark-blue);
       }
     }
   }
