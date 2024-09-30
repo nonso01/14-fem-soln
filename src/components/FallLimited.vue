@@ -13,13 +13,13 @@ const strokeColor = "#ff7d1a";
 </script>
 
 <template>
-  <div class="f-l flex column">
-    <div class="f-l-h flex column">
+  <div class="f-l flex column bd">
+    <div class="f-l-h flex column bd">
       <h4>Sneaker Company</h4>
       <h1>Fall Limited Edition Sneakers</h1>
     </div>
 
-    <div class="f-l-p flex column">
+    <div class="f-l-p flex column bd">
       <p>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
@@ -28,19 +28,19 @@ const strokeColor = "#ff7d1a";
       <div class="prices flex">
         <p class="flex">
           <span class="bold">$125.00</span>
-          <span class="discount"> 50%</span>
+          <span class="discount flex center"> 50%</span>
         </p>
         <p class="strike">$250.00</p>
       </div>
     </div>
 
-    <div class="f-l-b flex">
+    <div class="f-l-b flex b">
       <div class="quantity flex">
         <Plus :stroke="strokeColor" stroke-width="3" @click="handlePlus" />
         <span> {{ quantity }}</span>
         <Minus :stroke="strokeColor" stroke-width="3" @click="handleMinus" />
       </div>
-      <div class="add flex">
+      <div class="add flex" @click="handleAddToCart">
         <ShoppingCart stroke-width="2.5" />
         <span>Add to cart</span>
       </div>
@@ -51,8 +51,10 @@ const strokeColor = "#ff7d1a";
 <style scoped>
 /* replace column class */
 .f-l {
-  width: 26%;
-  height: 60dvh;
+  width: 31.25rem;
+  /* 26%; */
+  height: 33.75rem;
+  /* 60dvh; */
 
   justify-content: space-evenly;
 
@@ -84,8 +86,8 @@ const strokeColor = "#ff7d1a";
     background-color: var(--very-dark-blue);
     color: var(--white);
     font-weight: bold;
-    padding-inline: 5%;
-    padding-block: 2.8%;
+    width: 45px;
+    height: 30px;
     border-radius: 5px;
   }
   .f-l-h {
@@ -128,6 +130,9 @@ const strokeColor = "#ff7d1a";
         cursor: pointer;
         margin-inline: 5%;
       }
+      span {
+        color: var(--very-dark-blue);
+      }
     }
 
     .add {
@@ -143,6 +148,13 @@ const strokeColor = "#ff7d1a";
         color: var(--very-dark-blue);
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .f-l {
+    width: 100%;
+    border-color: red;
   }
 }
 </style>
