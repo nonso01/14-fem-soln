@@ -86,8 +86,8 @@ const strokeColor = "#ff7d1a";
     background-color: var(--very-dark-blue);
     color: var(--white);
     font-weight: bold;
-    width: 45px;
-    height: 30px;
+    width: 2.81rem;
+    height: 1.875rem;
     border-radius: 5px;
   }
   .f-l-h {

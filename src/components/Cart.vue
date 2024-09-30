@@ -10,11 +10,12 @@ const props = defineProps({
     <span class="title bd">Cart</span>
     <div class="d flex column bd">
       <template v-if="added">
-        <div class="d-p bd">
+        <div class="d-p flex bd">
           <div class="image"></div>
-          <div class="calc"></div>
+          <div class="calc bd"></div>
+          <div>i</div>
         </div>
-        <div class="d-c flex center">Checkout</div>
+        <div class="d-c flex center bd">Checkout</div>
       </template>
     </div>
   </div>
@@ -27,7 +28,7 @@ const props = defineProps({
 }
 
 .cart {
-  width: 360px;
+  width: 22.5rem;
   aspect-ratio: 1.5/1;
   background-color: var(--white);
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.15);
@@ -40,14 +41,28 @@ const props = defineProps({
   justify-content: space-around;
   padding-inline: 4%;
   .d-p {
-    flex-grow: 0.5;
+    height: 39%;
+    justify-content: space-between;
   }
   .d-c {
-    flex-grow: 0.3;
+    height: 38%;
     background-color: var(--orange);
     border-radius: 0.5rem;
     font-weight: bold;
     color: var(--very-dark-blue);
+    font-size: 1.1rem;
+  }
+
+  .image {
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    background-image: url("/image-product-1-thumbnail.jpg");
+    background-size: cover;
+    border-radius: 0.3rem;
+  }
+
+  .calc {
+    width: 70%;
   }
 }
 </style>
