@@ -19,7 +19,7 @@ div {
   border: 2px solid transparent;
   outline-offset: 2px;
   outline: 4px solid var(--pale-orange);
- /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 span {

@@ -29,7 +29,7 @@ function handleAddToCart() {
   /> -->
 
   <!-- <Added /> -->
-   <Cart />
+  <Cart :added="true" />
 </template>
 
 <style scoped></style>
