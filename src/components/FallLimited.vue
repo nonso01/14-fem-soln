@@ -14,12 +14,12 @@ const strokeColor = "#ff7d1a";
 
 <template>
   <div class="f-l flex column bd">
-    <div class="f-l-h flex column bd">
+    <div class="f-l-h flex column">
       <h4>Sneaker Company</h4>
       <h1>Fall Limited Edition Sneakers</h1>
     </div>
 
-    <div class="f-l-p flex column bd">
+    <div class="f-l-p flex column">
       <p>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the

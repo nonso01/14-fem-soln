@@ -8,6 +8,7 @@ const maxQuantity = 20;
 const price = 125;
 const quantity = ref(0);
 const total = computed(() => quantity.value * price);
+const itemAdded = ref(false);
 
 function handlePlus() {
   quantity.value += 1;
@@ -18,7 +19,9 @@ function handleMinus() {
   quantity.value <= 0 ? (quantity.value = 0) : void 0;
 }
 function handleAddToCart() {
-  alert("added to cart");
+  // work on here
+  quantity.value > 0 ? (itemAdded.value = true) : void 0;
+  console.log(itemAdded.value);
 }
 
 function handleDeleteCart() {
@@ -36,7 +39,7 @@ function handleDeleteCart() {
 
   <!-- <Added /> -->
   <Cart
-    :added="true"
+    :added="itemAdded"
     :quantity="quantity"
     :total="total"
     :handle-delete-cart="handleDeleteCart"
