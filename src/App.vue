@@ -2,10 +2,12 @@
 import FallLimited from "./components/FallLimited.vue";
 import Added from "./components/Added.vue";
 import Cart from "./components/Cart.vue";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
-const quantity = ref(0);
 const maxQuantity = 20;
+const price = 125;
+const quantity = ref(0);
+const total = computed(() => quantity.value * price);
 
 function handlePlus() {
   quantity.value += 1;
@@ -21,15 +23,15 @@ function handleAddToCart() {
 </script>
 
 <template>
-  <!-- <FallLimited
+  <FallLimited
     :handle-plus="handlePlus"
     :quantity="quantity"
     :handle-minus="handleMinus"
     :handle-add-to-cart="handleAddToCart"
-  /> -->
+  />
 
   <!-- <Added /> -->
-  <Cart :added="true" />
+  <Cart :added="true" :quantity="quantity" :total="total" />
 </template>
 
 <style scoped></style>

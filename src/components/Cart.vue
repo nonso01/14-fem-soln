@@ -1,21 +1,29 @@
 <script setup>
+import { Trash2 } from "lucide-vue-next";
 const props = defineProps({
   handleCheckout: Function,
+  quantity: Number,
+  total: Number,
   added: Boolean,
 });
 </script>
 
 <template>
-  <div class="cart flex column bd">
-    <span class="title bd">Cart</span>
-    <div class="d flex column bd">
+  <div class="cart flex column">
+    <span class="title">Cart</span>
+    <div class="d flex column">
       <template v-if="added">
-        <div class="d-p flex bd">
+        <div class="d-p flex center">
           <div class="image"></div>
-          <div class="calc bd"></div>
-          <div>i</div>
+          <div class="calc">
+            <p>Fall Limited Edition Sneaker</p>
+            <p>
+              $125.00 x {{ quantity }} <span class="bold"> ${{ total }}</span>
+            </p>
+          </div>
+          <div><Trash2 stroke="#68707d" /></div>
         </div>
-        <div class="d-c flex center bd">Checkout</div>
+        <div class="d-c flex center">Checkout</div>
       </template>
     </div>
   </div>
@@ -25,6 +33,19 @@ const props = defineProps({
 .title {
   font-weight: bold;
   font-size: 1.1rem;
+  margin-inline: 5%;
+}
+
+p {
+  color: var(--dark-grayish-blue);
+  margin-block: 1.5%;
+}
+.lucide-trash2-icon:hover {
+  stroke: red;
+}
+.bold {
+  font-weight: bold;
+  color: var(--very-dark-blue);
 }
 
 .cart {
@@ -36,10 +57,10 @@ const props = defineProps({
   justify-content: space-around;
 }
 .d {
-  /* border-top: 1.5px solid var(--grayish-blue); */
   flex-grow: 0.65;
   justify-content: space-around;
   padding-inline: 4%;
+  border-top: 2px solid var(--grayish-blue);
   .d-p {
     height: 39%;
     justify-content: space-between;
@@ -47,7 +68,7 @@ const props = defineProps({
   .d-c {
     height: 38%;
     background-color: var(--orange);
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
     font-weight: bold;
     color: var(--very-dark-blue);
     font-size: 1.1rem;
