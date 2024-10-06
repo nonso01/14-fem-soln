@@ -9,7 +9,6 @@
 }
 
 :root {
-  --bd: 2px solid;
   --very-dark-blue: #1d2025;
   --dark-grayish-blue: #68707d;
   --grayish-blue: hsl(220, 14%, 75%);

@@ -21,7 +21,9 @@ function handleAddToCart() {
   alert("added to cart");
 }
 
-function handleDeleteCart() {}
+function handleDeleteCart() {
+  alert("delete cart");
+}
 </script>
 
 <template>
@@ -33,7 +35,12 @@ function handleDeleteCart() {}
   />
 
   <!-- <Added /> -->
-  <Cart :added="true" :quantity="quantity" :total="total" />
+  <Cart
+    :added="true"
+    :quantity="quantity"
+    :total="total"
+    :handle-delete-cart="handleDeleteCart"
+  />
 </template>
 
 <style scoped></style>
