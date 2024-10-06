@@ -52,7 +52,6 @@ p {
 .cart {
   width: 22.5rem;
   aspect-ratio: 1.5/1;
-  /* background-color: var(--white); */
   backdrop-filter: blur(0.625rem);
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.15);
   border-radius: 0.625rem;
