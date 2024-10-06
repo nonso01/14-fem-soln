@@ -2,6 +2,7 @@
 import { Trash2 } from "lucide-vue-next";
 const props = defineProps({
   handleCheckout: Function,
+  handleDeleteCart: Function,
   quantity: Number,
   total: Number,
   added: Boolean,
@@ -21,7 +22,7 @@ const props = defineProps({
               $125.00 x {{ quantity }} <span class="bold"> ${{ total }}</span>
             </p>
           </div>
-          <div><Trash2 stroke="#68707d" /></div>
+          <div><Trash2 stroke="#68707d" @click="handleDeleteCart"/></div>
         </div>
         <div class="d-c flex center">Checkout</div>
       </template>
@@ -51,7 +52,8 @@ p {
 .cart {
   width: 22.5rem;
   aspect-ratio: 1.5/1;
-  background-color: var(--white);
+  /* background-color: var(--white); */
+  backdrop-filter: blur(0.625rem);
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.15);
   border-radius: 0.625rem;
   justify-content: space-around;

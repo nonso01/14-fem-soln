@@ -22,8 +22,8 @@
 
 html {
   height: 100dvh;
-  user-select: none;
-  -moz-user-select: none;
+  /* user-select: none;
+  -moz-user-select: none; */
   body,
   #app {
     height: inherit;

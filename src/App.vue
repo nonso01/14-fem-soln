@@ -20,6 +20,8 @@ function handleMinus() {
 function handleAddToCart() {
   alert("added to cart");
 }
+
+function handleDeleteCart() {}
 </script>
 
 <template>
