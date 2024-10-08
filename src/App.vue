@@ -2,12 +2,14 @@
 import FallLimited from "./components/FallLimited.vue";
 import Added from "./components/Added.vue";
 import Cart from "./components/Cart.vue";
+import Nav from "./components/Nav.vue";
 import { computed, ref } from "vue";
 
 const maxQuantity = 20;
 const price = 125;
 const quantity = ref(0);
-const total = computed(() => quantity.value * price);
+const quantity_changed = ref(0);
+const total = computed(() => quantity_changed.value * price);
 const itemAdded = ref(false);
 
 function handlePlus() {
@@ -19,31 +21,43 @@ function handleMinus() {
   quantity.value <= 0 ? (quantity.value = 0) : void 0;
 }
 function handleAddToCart() {
-  // work on here
-  quantity.value > 0 ? (itemAdded.value = true) : void 0;
-  console.log(itemAdded.value);
+  if (quantity.value > 0) {
+    quantity_changed.value = quantity.value;
+    itemAdded.value = true;
+  } else {
+    itemAdded.value = false;
+  }
 }
 
 function handleDeleteCart() {
-  alert("delete cart");
+  itemAdded.value = false;
 }
+
+// function handleCheckout() {
+//   // for the cart ui
+// }
 </script>
 
 <template>
-  <FallLimited
+  <!-- <FallLimited
     :handle-plus="handlePlus"
     :quantity="quantity"
     :handle-minus="handleMinus"
     :handle-add-to-cart="handleAddToCart"
-  />
+  /> -->
 
   <!-- <Added /> -->
-  <Cart
+
+  <!-- <Cart
     :added="itemAdded"
-    :quantity="quantity"
+    :quantity="quantity_changed"
     :total="total"
     :handle-delete-cart="handleDeleteCart"
-  />
+  /> -->
+
+  <Nav />
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

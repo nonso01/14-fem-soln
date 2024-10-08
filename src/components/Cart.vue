@@ -10,9 +10,10 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="cart flex column">
+  <div class="cart flex column bd">
     <span class="title">Cart</span>
     <div class="d flex column">
+      <span class="e" v-if="!added">Your cart is empty</span>
       <template v-if="added">
         <div class="d-p flex center">
           <div class="image"></div>
@@ -22,7 +23,7 @@ const props = defineProps({
               $125.00 x {{ quantity }} <span class="bold"> ${{ total }}</span>
             </p>
           </div>
-          <div><Trash2 stroke="#68707d" @click="handleDeleteCart"/></div>
+          <div><Trash2 stroke="#68707d" @click="handleDeleteCart" /></div>
         </div>
         <div class="d-c flex center">Checkout</div>
       </template>
@@ -59,9 +60,16 @@ p {
 }
 .d {
   flex-grow: 0.65;
+  min-height: 168.5px;
   justify-content: space-around;
   padding-inline: 4%;
   border-top: 2px solid var(--grayish-blue);
+
+  span.e {
+    font-weight: bold;
+    color: var(--dark-grayish-blue);
+    align-self: center;
+  }
   .d-p {
     height: 39%;
     justify-content: space-between;
