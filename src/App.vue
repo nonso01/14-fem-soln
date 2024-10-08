@@ -11,6 +11,7 @@ const quantity = ref(0);
 const quantity_changed = ref(0);
 const total = computed(() => quantity_changed.value * price);
 const itemAdded = ref(false);
+const showCart = ref(false);
 
 function handlePlus() {
   quantity.value += 1;
@@ -36,6 +37,10 @@ function handleDeleteCart() {
 // function handleCheckout() {
 //   // for the cart ui
 // }
+
+function handleShowCart() {
+  showCart.value = !showCart.value;
+}
 </script>
 
 <template>
@@ -48,16 +53,14 @@ function handleDeleteCart() {
 
   <!-- <Added /> -->
 
-  <!-- <Cart
+  <!-- <Cart v-if="showCart"
     :added="itemAdded"
     :quantity="quantity_changed"
     :total="total"
     :handle-delete-cart="handleDeleteCart"
   /> -->
 
-  <Nav />
+  <Nav :handle-show-cart="handleShowCart" />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
