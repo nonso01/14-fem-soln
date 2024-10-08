@@ -11,7 +11,7 @@ const list = ["Collections", "Men", "Women", "About", "Contact"];
 <template>
   <!-- media queries -->
   <div class="nav flex bd">
-    <div class="l flex center bd">
+    <div class="l flex center">
       <div class="logo flex center bd">
         <img src="/logo.svg" alt="logo icon" />
       </div>
@@ -21,9 +21,10 @@ const list = ["Collections", "Men", "Women", "About", "Contact"];
         >
       </div>
     </div>
-    <div class="i flex center bd">
-      <div class="bd cart flex center" @click="handleShowCart">
-        <ShoppingCart stroke="var(--very-dark-blue)" stroke-width="2.5" />
+    <div class="i flex center">
+      <div class="cart flex center" @click="handleShowCart">
+        <span class="q" v-if="quantity > 0"> {{ quantity }}</span>
+        <ShoppingCart stroke="var(--grayish-blue)" stroke-width="2.5" />
       </div>
       <div class="pfp flex center transition" @click="handleShowCart">
         <img src="/image-avatar.png" alt="user profile" />
@@ -77,6 +78,28 @@ const list = ["Collections", "Men", "Women", "About", "Contact"];
         height: 100%;
       }
     }
+  }
+}
+
+.cart {
+  position: relative;
+
+  .q {
+    /* border-color: red; */
+    padding-inline: 15%;
+    background-color: var(--orange);
+    position: absolute;
+    top: -60%;
+    left: 60%;
+    max-width: 25px;
+    color: var(--very-dark-blue);
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 5px;
+  }
+
+  svg:hover {
+    stroke: var(--very-dark-blue);
   }
 }
 /* @media screen and (max-width: 500px) {} */

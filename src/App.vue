@@ -32,6 +32,7 @@ function handleAddToCart() {
 
 function handleDeleteCart() {
   itemAdded.value = false;
+  quantity_changed.value = 0;
 }
 
 // function handleCheckout() {
@@ -44,6 +45,8 @@ function handleShowCart() {
 </script>
 
 <template>
+  <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />
+
   <!-- <FallLimited
     :handle-plus="handlePlus"
     :quantity="quantity"
@@ -53,14 +56,13 @@ function handleShowCart() {
 
   <!-- <Added /> -->
 
-  <!-- <Cart v-if="showCart"
+  <!-- <Cart
+    v-if="showCart"
     :added="itemAdded"
     :quantity="quantity_changed"
     :total="total"
     :handle-delete-cart="handleDeleteCart"
   /> -->
-
-  <Nav :handle-show-cart="handleShowCart" />
 </template>
 
 <style scoped></style>
