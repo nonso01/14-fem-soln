@@ -15,11 +15,12 @@ const img_src_thumbnail = [
 
 <template>
   <div class="slider flex column bd">
-    <div class="i  bd">
-      <div class="" v-for="src in img_src"><img :src="src" /></div>
+    <div class="i transition bd">
+      <div></div>
+      <div></div>
     </div>
-    <div class="s flex bd">
-      <div class="thn bd" v-for="src_thn in img_src_thumbnail"><img :src="src_thn" /></div>
+    <div class="s flex">
+      <div class="thn" v-for="src_thn in img_src_thumbnail"><img :src="src_thn" /></div>
     </div>
   </div>
 </template>
@@ -27,7 +28,7 @@ const img_src_thumbnail = [
 .slider {
   width: 31.25rem;
   /* replace with relative values */
-  height: 33.75rem;
+  height: 40rem;
   justify-content: space-between;
   padding: 1.5%;
 }
@@ -39,12 +40,22 @@ img {
 }
 
 .i {
-  height: 75%;
+  height: 80%;
   border-radius: 0.5rem; 
+  background-image: url('/image-product-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: 480px; */
+
+  .i-m {
+    width: 100%;
+    height: 100%;
+    border-color: red;
+  }
 }
 
 .s {
-  height: 20%;
+  height: 17%;
   justify-content: space-evenly;
   align-items: center;
   /* border-color: red; */
