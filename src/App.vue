@@ -3,6 +3,7 @@ import FallLimited from "./components/FallLimited.vue";
 import Added from "./components/Added.vue";
 import Cart from "./components/Cart.vue";
 import Nav from "./components/Nav.vue";
+import Slider from "./components/Slider.vue";
 import { computed, ref } from "vue";
 
 const maxQuantity = 20;
@@ -45,7 +46,7 @@ function handleShowCart() {
 </script>
 
 <template>
-  <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />
+  <!-- <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" /> -->
 
   <!-- <FallLimited
     :handle-plus="handlePlus"
@@ -63,6 +64,8 @@ function handleShowCart() {
     :total="total"
     :handle-delete-cart="handleDeleteCart"
   /> -->
+
+  <Slider />
 </template>
 
 <style scoped></style>
