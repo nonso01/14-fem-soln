@@ -1,4 +1,5 @@
 <script setup>
+// import { CircleChevronLeft, CircleChevronRight } from "lucide-vue-next";
 const img_src = [
   "/image-product-1.jpg",
   "/image-product-2.jpg",
@@ -14,13 +15,15 @@ const img_src_thumbnail = [
 </script>
 
 <template>
-  <div class="slider flex column bd">
-    <div class="i transition bd">
-      <div></div>
-      <div></div>
+  <div class="slider flex column ">
+    <div class="i transition ">
+      <!-- <CircleChevronLeft />
+      <CircleChevronRight /> -->
     </div>
     <div class="s flex">
-      <div class="thn" v-for="src_thn in img_src_thumbnail"><img :src="src_thn" /></div>
+      <div class="thn" v-for="src_thn in img_src_thumbnail">
+        <img class="transition" :src="src_thn" />
+      </div>
     </div>
   </div>
 </template>
@@ -41,11 +44,16 @@ img {
 
 .i {
   height: 80%;
-  border-radius: 0.5rem; 
-  background-image: url('/image-product-1.jpg');
+  border-radius: 0.5rem;
+  background-image: url("/image-product-1.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   /* background-position: 480px; */
+
+  &:hover {
+    background-size: 110% 110%;
+    background-position-y: -1rem;
+  }
 
   .i-m {
     width: 100%;
@@ -67,7 +75,12 @@ img {
 
     img {
       border-radius: 0.625rem;
-      /* border: 2px solid var(--orange); */
+      outline: 2px solid transparent;
+      outline-offset: 3px;
+      &:hover {
+        outline-color: var(--orange);
+        opacity: .7;
+      }
     }
   }
 }
