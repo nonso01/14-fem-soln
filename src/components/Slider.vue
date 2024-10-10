@@ -15,7 +15,7 @@ const img_src_thumbnail = [
 </script>
 
 <template>
-  <div class="slider flex column ">
+  <div class="slider bd flex column ">
     <div class="i transition ">
       <!-- <CircleChevronLeft />
       <CircleChevronRight /> -->

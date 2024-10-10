@@ -46,24 +46,24 @@ function handleShowCart() {
 </script>
 
 <template>
-  <!-- <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" /> -->
+  <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />
 
-  <!-- <FallLimited
+  <FallLimited
     :handle-plus="handlePlus"
     :quantity="quantity"
     :handle-minus="handleMinus"
     :handle-add-to-cart="handleAddToCart"
-  /> -->
+  />
 
-  <!-- <Added /> -->
+  <Added />
 
-  <!-- <Cart
+  <Cart
     v-if="showCart"
     :added="itemAdded"
     :quantity="quantity_changed"
     :total="total"
     :handle-delete-cart="handleDeleteCart"
-  /> -->
+  />
 
   <Slider />
 </template>
