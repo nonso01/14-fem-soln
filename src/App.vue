@@ -4,6 +4,7 @@ import Added from "./components/Added.vue";
 import Cart from "./components/Cart.vue";
 import Nav from "./components/Nav.vue";
 import Slider from "./components/Slider.vue";
+import Overlay from "./components/Overlay.vue";
 import { computed, ref } from "vue";
 
 const maxQuantity = 20;
@@ -13,6 +14,7 @@ const quantity_changed = ref(0);
 const total = computed(() => quantity_changed.value * price);
 const itemAdded = ref(false);
 const showCart = ref(false);
+const overlay = ref(true);
 
 function handlePlus() {
   quantity.value += 1;
@@ -43,29 +45,49 @@ function handleDeleteCart() {
 function handleShowCart() {
   showCart.value = !showCart.value;
 }
+
+function handleRight() {}
+function handleLeft() {}
+function handleCancel() {
+  overlay.value = false;
+}
 </script>
 
 <template>
-  <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />
+  <!-- <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" /> -->
 
-  <FallLimited
+  <!-- <FallLimited
     :handle-plus="handlePlus"
     :quantity="quantity"
     :handle-minus="handleMinus"
     :handle-add-to-cart="handleAddToCart"
   />
 
-  <Added />
+  <Added /> -->
 
-  <Cart
+  <!-- <Cart
     v-if="showCart"
     :added="itemAdded"
     :quantity="quantity_changed"
     :total="total"
     :handle-delete-cart="handleDeleteCart"
-  />
+  /> -->
 
-  <Slider />
+  <!-- <Slider /> -->
+
+  <Transition>
+    <Slider :overlay="true" :handle-cancel="handleCancel" v-if="overlay" />
+  </Transition>
 </template>
 
-<style scoped></style>
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

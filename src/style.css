@@ -25,6 +25,7 @@ html {
   body,
   #app {
     height: inherit;
+    background-color: var(--white);
 
     display: grid;
     place-items: center;
