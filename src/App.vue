@@ -54,30 +54,35 @@ function handleCancel() {
 </script>
 
 <template>
-  <!-- <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" /> -->
+  <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />
 
-  <!-- <FallLimited
-    :handle-plus="handlePlus"
-    :quantity="quantity"
-    :handle-minus="handleMinus"
-    :handle-add-to-cart="handleAddToCart"
-  />
-
-  <Added /> -->
-
-  <!-- <Cart
-    v-if="showCart"
-    :added="itemAdded"
-    :quantity="quantity_changed"
-    :total="total"
-    :handle-delete-cart="handleDeleteCart"
-  /> -->
-
-  <!-- <Slider /> -->
-
-  <Transition>
-    <Slider :overlay="true" :handle-cancel="handleCancel" v-if="overlay" />
+   <Transition>
+    <Cart
+      v-if="showCart"
+      :added="itemAdded"
+      :quantity="quantity_changed"
+      :total="total"
+      :handle-delete-cart="handleDeleteCart"
+    />
   </Transition>
+
+  <div class="main flex">
+    <Slider />
+
+    <FallLimited
+      :handle-plus="handlePlus"
+      :quantity="quantity"
+      :handle-minus="handleMinus"
+      :handle-add-to-cart="handleAddToCart"
+    />
+  </div>
+
+  <!-- <Added /> -->
+
+
+  <!-- <Transition>
+    <Slider :overlay="true" :handle-cancel="handleCancel" v-if="overlay" />
+  </Transition> -->
 </template>
 
 <style>
@@ -89,5 +94,17 @@ function handleCancel() {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  margin-top: 3%;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

@@ -19,24 +19,21 @@
 }
 
 html {
-  height: 100dvh;
+  min-height: 100dvh;
   user-select: none;
   -moz-user-select: none;
   body,
   #app {
-    height: inherit;
+    min-height: inherit;
     background-color: var(--white);
+    position: relative;
 
-    display: grid;
+    /* display: grid; */
     place-items: center;
   }
 }
 .lucide {
   transition-duration: 300ms;
-}
-
-img {
-  /* object-fit: contain; */
 }
 
 .transition {

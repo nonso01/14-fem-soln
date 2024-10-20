@@ -40,6 +40,7 @@ const img_src_thumbnail = [
 <style scoped>
 .slider {
   width: 31.25rem;
+  cursor: pointer;
   /* replace with relative values */
   height: 38rem;
   justify-content: space-between;

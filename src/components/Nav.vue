@@ -1,22 +1,39 @@
 <script setup>
 import { ShoppingCart } from "lucide-vue-next";
+import { ref } from "vue";
+import Cart from "./Cart.vue";
 
 const props = defineProps({
   handleShowCart: Function,
   quantity: Number,
 });
+
+const scrollLeft = ref(0);
+const scrollWidth = ref(0);
+
 const list = ["Collections", "Men", "Women", "About", "Contact"];
+
+function handleScrollNav({ target }) {
+  const { offsetWidth, offsetLeft } = target;
+  scrollWidth.value = `${offsetWidth}px`;
+  scrollLeft.value = `${offsetLeft}px`;
+  // console.log(offsetLeft);
+}
 </script>
 
 <template>
   <!-- media queries -->
-  <div class="nav flex bd">
+  <div class="nav flex">
     <div class="l flex center">
-      <div class="logo flex center bd">
+      <div class="logo flex center">
         <img src="/logo.svg" alt="logo icon" />
       </div>
-      <div class="links flex bd">
-        <span class="nav-items transition" v-for="item in list">
+      <div class="links flex">
+        <span
+          class="nav-items transition"
+          v-for="item in list"
+          @click="handleScrollNav"
+        >
           {{ item }}</span
         >
       </div>
@@ -30,22 +47,29 @@ const list = ["Collections", "Men", "Women", "About", "Contact"];
         <img src="/image-avatar.png" alt="user profile" />
       </div>
     </div>
+
+    <div
+      class="scroll-line transition"
+      :style="{ left: scrollLeft, width: scrollWidth }"
+    ></div>
   </div>
 </template>
 
 <style scoped>
 .nav {
   position: relative;
-  width: 100dvw;
-  height: 130px;
-  justify-content: space-evenly;
+  width: 75dvw;
+  height: 120px;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grayish-blue);
 
   .l {
-    width: 50%;
+    width: 60%;
     justify-content: space-between;
 
     .links {
       width: 80%;
+      cursor: pointer;
       justify-content: space-evenly;
 
       .nav-items {
@@ -60,6 +84,7 @@ const list = ["Collections", "Men", "Women", "About", "Contact"];
 
   .i {
     width: 20%;
+    cursor: pointer;
     justify-content: space-evenly;
 
     .pfp {
@@ -101,6 +126,15 @@ const list = ["Collections", "Men", "Women", "About", "Contact"];
   svg:hover {
     stroke: var(--very-dark-blue);
   }
+}
+
+.scroll-line {
+  background-color: var(--orange);
+  position: absolute;
+  bottom: 0;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+  /* transform: translateX(-5%); */
 }
 /* @media screen and (max-width: 500px) {} */
 </style>

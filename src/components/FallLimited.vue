@@ -13,9 +13,9 @@ const strokeColor = "#ff7d1a";
 </script>
 
 <template>
-  <div class="f-l flex column bd">
+  <div class="f-l flex column">
     <div class="f-l-h flex column">
-      <h4>Sneaker Company</h4>
+      <h3>Sneaker Company</h3>
       <h1>Fall Limited Edition Sneakers</h1>
     </div>
 
@@ -64,7 +64,7 @@ const strokeColor = "#ff7d1a";
     font-size: 2.8rem;
   }
 
-  h4,
+  h3,
   p {
     color: var(--dark-grayish-blue);
     line-height: 1.5;
