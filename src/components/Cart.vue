@@ -57,7 +57,7 @@ p {
   right: 12%;
   top: 11%;
   /* aspect-ratio: 1.5/1; */
-  backdrop-filter: blur(0.625rem);
+  backdrop-filter: blur(0.325rem);
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.15);
   border-radius: 0.625rem;
   justify-content: space-around;

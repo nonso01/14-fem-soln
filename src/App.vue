@@ -56,7 +56,7 @@ function handleCancel() {
 <template>
   <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />
 
-   <Transition>
+  <Transition>
     <Cart
       v-if="showCart"
       :added="itemAdded"
@@ -78,7 +78,6 @@ function handleCancel() {
   </div>
 
   <!-- <Added /> -->
-
 
   <!-- <Transition>
     <Slider :overlay="true" :handle-cancel="handleCancel" v-if="overlay" />
@@ -106,5 +105,11 @@ function handleCancel() {
   width: 60%;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  #app {
+    background-color: red;
+  }
 }
 </style>
