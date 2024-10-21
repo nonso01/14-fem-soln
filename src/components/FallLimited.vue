@@ -40,7 +40,7 @@ const strokeColor = "#ff7d1a";
         <span> {{ quantity }}</span>
         <Minus :stroke="strokeColor" stroke-width="3" @click="handleMinus" />
       </div>
-      <div class="add flex" @click="handleAddToCart">
+      <div class="add flex btn transition" @click="handleAddToCart">
         <ShoppingCart stroke-width="2.5" />
         <span>Add to cart</span>
       </div>

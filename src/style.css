@@ -51,12 +51,22 @@ html {
   }
 }
 
+.btn {
+  &.shadow {
+    box-shadow: 0 2px 0.9rem var(--orange);
+  }
+
+  &:active {
+    transform: translateY(5%);
+  }
+}
+
 .bd {
   border: 2px solid;
 }
 
 @media screen and (max-width: 500px) {
- /* * {
+  /* * {
   background-color: red;
  } */
 }

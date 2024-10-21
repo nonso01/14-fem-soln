@@ -25,7 +25,7 @@ const props = defineProps({
           </div>
           <div><Trash2 stroke="#68707d" @click="handleDeleteCart" /></div>
         </div>
-        <div class="d-c flex center">Checkout</div>
+        <div class="d-c flex center btn transition">Checkout</div>
       </template>
     </div>
   </div>
@@ -67,7 +67,7 @@ p {
   min-height: 168.5px;
   justify-content: space-around;
   padding-inline: 4%;
-  border-top: 2px solid var(--grayish-blue);
+  border-top: 1px solid var(--grayish-blue);
 
   span.e {
     font-weight: bold;

@@ -17,7 +17,6 @@ function handleScrollNav({ target }) {
   const { offsetWidth, offsetLeft } = target;
   scrollWidth.value = `${offsetWidth}px`;
   scrollLeft.value = `${offsetLeft}px`;
-  // console.log(offsetLeft);
 }
 </script>
 
@@ -136,5 +135,12 @@ function handleScrollNav({ target }) {
   height: 0.5rem;
   /* transform: translateX(-5%); */
 }
-/* @media screen and (max-width: 500px) {} */
+@media screen and (max-width: 1980px) {
+  #app {
+    .nav {
+      /* background-color: red; */
+      width: min(75dvw, 1440px);
+    }
+  }
+}
 </style>
