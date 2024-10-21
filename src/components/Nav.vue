@@ -57,7 +57,7 @@ function handleScrollNav({ target }) {
 <style scoped>
 .nav {
   position: relative;
-  width: 75dvw;
+  width: min(75dvw, 1440px);
   height: 120px;
   justify-content: space-between;
   border-bottom: 1px solid var(--grayish-blue);
@@ -138,7 +138,6 @@ function handleScrollNav({ target }) {
 @media screen and (max-width: 1980px) {
   #app {
     .nav {
-      /* background-color: red; */
       width: min(75dvw, 1440px);
     }
   }
