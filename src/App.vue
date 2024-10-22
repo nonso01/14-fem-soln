@@ -124,7 +124,7 @@ function handleCancel() {
 
 .main {
   margin-top: 3%;
-  width: 60%;
+  width: min(60%, 1145px);
   justify-content: space-between;
   align-items: center;
 }
