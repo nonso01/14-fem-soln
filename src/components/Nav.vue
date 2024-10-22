@@ -29,7 +29,7 @@ function handleScrollNav({ target }) {
       </div>
       <div class="links flex">
         <span
-          class="nav-items transition"
+          class="nav-items transition pointer"
           v-for="item in list"
           @click="handleScrollNav"
         >
@@ -38,11 +38,11 @@ function handleScrollNav({ target }) {
       </div>
     </div>
     <div class="i flex center">
-      <div class="cart flex center" @click="handleShowCart">
+      <div class="cart flex center pointer" @click="handleShowCart">
         <span class="q" v-if="quantity > 0"> {{ quantity }}</span>
         <ShoppingCart stroke="var(--grayish-blue)" stroke-width="2.5" />
       </div>
-      <div class="pfp flex center transition" @click="handleShowCart">
+      <div class="pfp flex center transition pointer" @click="handleShowCart">
         <img src="/image-avatar.png" alt="user profile" />
       </div>
     </div>
@@ -57,7 +57,7 @@ function handleScrollNav({ target }) {
 <style scoped>
 .nav {
   position: relative;
-  width: min(75dvw, 1440px);
+  width: 75dvw;
   height: 120px;
   justify-content: space-between;
   border-bottom: 1px solid var(--grayish-blue);
@@ -68,7 +68,6 @@ function handleScrollNav({ target }) {
 
     .links {
       width: 80%;
-      cursor: pointer;
       justify-content: space-evenly;
 
       .nav-items {
@@ -83,7 +82,6 @@ function handleScrollNav({ target }) {
 
   .i {
     width: 20%;
-    cursor: pointer;
     justify-content: space-evenly;
 
     .pfp {
@@ -109,7 +107,6 @@ function handleScrollNav({ target }) {
   position: relative;
 
   .q {
-    /* border-color: red; */
     padding-inline: 15%;
     background-color: var(--orange);
     position: absolute;
@@ -133,9 +130,8 @@ function handleScrollNav({ target }) {
   bottom: 0;
   border-radius: 0.5rem;
   height: 0.5rem;
-  /* transform: translateX(-5%); */
 }
-@media screen and (max-width: 1980px) {
+@media screen and (min-width: 1980px) {
   #app {
     .nav {
       width: min(75dvw, 1440px);

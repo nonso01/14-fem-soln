@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
-
+/* max-width: smaller target, min-width: larger targets */
 * {
   padding: 0;
   margin: 0;
@@ -38,6 +38,10 @@ html {
 
 .transition {
   transition-duration: 200ms;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .flex {

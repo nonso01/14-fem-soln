@@ -1,1 +1,7 @@
 ### UPDATED..
+
+> this project is based on a previous solution i made a year ago, you can check from the link below
+> [old solution](https://14-fem-soln.netlify.app)
+
+> while the updated version
+> [new solution](httsp://14-fem-test.netlify.app)

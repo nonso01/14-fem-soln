@@ -124,15 +124,23 @@ function handleCancel() {
 
 .main {
   margin-top: 3%;
-  width: min(60%, 1145px);
+  width: 60%;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (min-width: 1980px) {
+  #app {
+    .main {
+      width: min(60%, 1145px);
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
   #app {
     /* background-color: red; */
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 </style>
