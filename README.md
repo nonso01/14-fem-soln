@@ -4,4 +4,4 @@
 > [old solution](https://14-fm-soln.netlify.app)
 
 > while the updated version
-> [new solution](httsp://14-fem-test.netlify.app)
+> [new solution](https://14-fem-test.netlify.app)
