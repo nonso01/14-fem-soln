@@ -151,6 +151,12 @@ const strokeColor = "#ff7d1a";
   }
 }
 
+/* @media screen and (max-width: 1280px) {
+#app {
+ 
+}
+} */
+
 @media screen and (max-width: 500px) {
   .f-l {
     width: 100%;

@@ -129,6 +129,16 @@ function handleCancel() {
   align-items: center;
 }
 
+@media screen and (max-width: 1280px) {
+  #app {
+    .main {
+      /* background-color: red; */
+      border: 2px solid red;
+      width: 80%;
+    }
+  }
+}
+
 @media screen and (min-width: 1980px) {
   #app {
     .main {
