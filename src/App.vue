@@ -15,6 +15,7 @@ const quantity_changed = ref(0);
 const total = computed(() => quantity_changed.value * price);
 const itemAdded = ref(false);
 const itemAddedCopy = ref(false);
+const itemDeleted = ref(false);
 const showCart = ref(false);
 const overlay = ref(true);
 
@@ -43,6 +44,11 @@ function handleAddToCart() {
 function handleDeleteCart() {
   itemAdded.value = false;
   quantity_changed.value = 0;
+
+  itemDeleted.value = true;
+  setTimeout(() => {
+    itemDeleted.value = false;
+  }, onesec);
 }
 
 // function handleCheckout() {
@@ -62,7 +68,11 @@ function handleCancel() {
 
 <template>
   <Transition name="fade">
-    <Added v-if="itemAddedCopy" />
+    <Added v-if="itemAddedCopy"> items added </Added>
+  </Transition>
+
+  <Transition name="fade">
+    <Added v-if="itemDeleted"> items deleted </Added>
   </Transition>
 
   <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />

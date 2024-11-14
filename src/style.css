@@ -25,13 +25,11 @@ html {
   body,
   #app {
     min-height: inherit;
-    /* background-color: var(--white); */
     position: relative;
-
-    /* display: grid; */
     place-items: center;
   }
 }
+
 .lucide {
   transition-duration: 300ms;
 }

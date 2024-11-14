@@ -4,8 +4,8 @@ import { CircleCheckBig } from "lucide-vue-next";
 
 <template>
   <div class="flex a">
-    <CircleCheckBig stroke-width="2" stroke="#ff7d1a" />
-    <span>items added</span>
+    <CircleCheckBig stroke-width="2" stroke="var(--very-dark-blue)" />
+    <span><slot></slot></span>
   </div>
 </template>
 <style scoped>
@@ -21,13 +21,23 @@ div {
   border: 2px solid transparent;
   outline-offset: 2px;
   outline: 4px solid var(--pale-orange);
-  background-color: var(--white);
+  background-color: var(--orange);
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 span {
-  color: var(--orange);
+  color: var(--very-dark-blue);
   font-weight: bold;
-  font-size: .8rem;
+  font-size: 0.7rem;
 }
+
+.lucide {
+  animation: offset .3s ease 1;
+}
+
+/* @keyframes offset {
+  from {
+    stro
+  }
+} */
 </style>

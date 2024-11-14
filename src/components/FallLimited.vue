@@ -144,7 +144,7 @@ const strokeColor = "#ff7d1a";
       cursor: pointer;
       svg,
       span {
-        margin-inline: 5px;
+        margin-inline: 1ch;
         color: var(--very-dark-blue);
       }
     }
