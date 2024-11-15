@@ -26,7 +26,10 @@ const img_src_thumbnail = [
 <template>
   <div class="slider flex column">
     <template v-if="overlay">
-      <X style="top: -4rem; right: 0" @click="handleCancel" />
+      <X
+        style="top: -3rem; right: 1rem; background-color: transparent"
+        @click="handleCancel"
+      />
       <ChevronLeft class="i-left" style="left: -1rem" @click="handleLeft" />
       <ChevronRight class="i-right" style="right: -1rem" @click="handleRight" />
     </template>
@@ -46,6 +49,14 @@ const img_src_thumbnail = [
   justify-content: space-between;
   padding: 1.5%;
   position: relative;
+}
+
+.slider.overlay {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 img {
@@ -99,11 +110,12 @@ img {
 
 .lucide {
   position: absolute;
-  background-color: rgb(255 255 255 / 0.8);
+  background-color: rgb(255 255 255 / 0.5);
   border-radius: 50%;
   width: 40px;
   height: 40px;
   top: 40%;
+  stroke: #1d2025;
 
   &:hover {
     stroke: var(--orange);

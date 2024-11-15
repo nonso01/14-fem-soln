@@ -51,9 +51,10 @@ function handleDeleteCart() {
   }, onesec);
 }
 
-// function handleCheckout() {
-//   // for the cart ui
-// }
+function handleOverlay() {
+  overlay.value = !overlay.value;
+  console.log(overlay.value);
+}
 
 function handleShowCart() {
   showCart.value = !showCart.value;
@@ -88,7 +89,7 @@ function handleCancel() {
   </Transition>
 
   <div class="main flex">
-    <Slider />
+    <Slider @click="handleOverlay" />
 
     <FallLimited
       :handle-plus="handlePlus"
@@ -98,13 +99,24 @@ function handleCancel() {
     />
   </div>
 
- <!-- <Overlay /> -->
+  <Transition>
+    <Overlay @click="handleOverlay" v-if="overlay" />
+  </Transition>
+
+  <Transition>
+    <Slider
+      :overlay="overlay"
+      :handle-cancel="handleOverlay"
+      v-if="overlay"
+      class="overlay"
+    />
+  </Transition>
 </template>
 
 <style>
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
 .v-enter-from,
