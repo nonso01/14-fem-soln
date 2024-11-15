@@ -98,9 +98,7 @@ function handleCancel() {
     />
   </div>
 
-  <!-- <Transition>
-    <Slider :overlay="true" :handle-cancel="handleCancel" v-if="overlay" />
-  </Transition> -->
+ <!-- <Overlay /> -->
 </template>
 
 <style>

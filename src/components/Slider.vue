@@ -6,6 +6,7 @@ const props = defineProps({
   handleLeft: Function,
   handleRight: Function,
   handleCancel: Function,
+  handleClick: Function,
 });
 
 const img_src = [
@@ -29,7 +30,7 @@ const img_src_thumbnail = [
       <ChevronLeft class="i-left" style="left: -1rem" @click="handleLeft" />
       <ChevronRight class="i-right" style="right: -1rem" @click="handleRight" />
     </template>
-    <div class="i transition flex center"></div>
+    <div class="i transition flex center" @click="handleClick"></div>
     <div class="s flex">
       <div class="thn" v-for="(src_thn, i) in img_src_thumbnail">
         <img class="transition" :src="src_thn" />
@@ -41,7 +42,6 @@ const img_src_thumbnail = [
 .slider {
   width: 31.25rem;
   cursor: pointer;
-  /* replace with relative values */
   height: 38rem;
   justify-content: space-between;
   padding: 1.5%;
