@@ -22,7 +22,6 @@ div {
   outline-offset: 2px;
   outline: 4px solid var(--pale-orange);
   background-color: var(--orange);
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 span {
@@ -32,12 +31,15 @@ span {
 }
 
 .lucide {
-  animation: offset .3s ease 1;
+  animation: offset 0.35s ease 1;
 }
 
-/* @keyframes offset {
+@keyframes offset {
   from {
-    stro
+    scale: 0;
   }
-} */
+  to {
+    scale: 1;
+  }
+}
 </style>
