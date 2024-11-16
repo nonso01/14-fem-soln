@@ -17,7 +17,7 @@ const itemAdded = ref(false);
 const itemAddedCopy = ref(false);
 const itemDeleted = ref(false);
 const showCart = ref(false);
-const overlay = ref(true);
+const overlay = ref(false);
 
 function handlePlus() {
   quantity.value += 1;
