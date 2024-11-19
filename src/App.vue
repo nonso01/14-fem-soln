@@ -53,18 +53,19 @@ function handleDeleteCart() {
 
 function handleOverlay() {
   overlay.value = !overlay.value;
-  console.log(overlay.value);
 }
 
 function handleShowCart() {
   showCart.value = !showCart.value;
 }
 
-function handleRight() {}
-function handleLeft() {}
-function handleCancel() {
-  overlay.value = false;
-}
+
+
+// function handleRight() {}
+// function handleLeft() {}
+// function handleCancel() {
+//   overlay.value = false;
+// }
 </script>
 
 <template>
@@ -105,9 +106,9 @@ function handleCancel() {
 
   <Transition>
     <Slider
-      :overlay="overlay"
-      :handle-cancel="handleOverlay"
       v-if="overlay"
+      :overlay="overlay"
+      :handle-overlay="handleOverlay"
       class="overlay"
     />
   </Transition>

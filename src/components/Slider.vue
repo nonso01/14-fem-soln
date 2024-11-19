@@ -1,12 +1,13 @@
 <script setup>
 import { ChevronLeft, ChevronRight, X } from "lucide-vue-next";
+import { ref } from "vue";
 
 const props = defineProps({
   overlay: Boolean,
   handleLeft: Function,
   handleRight: Function,
-  handleCancel: Function,
-  handleClick: Function,
+  handleOverlay: Function,
+  // handleChangeImg: Function,
 });
 
 const img_src = [
@@ -21,6 +22,12 @@ const img_src_thumbnail = [
   "image-product-3-thumbnail.jpg",
   "image-product-4-thumbnail.jpg",
 ];
+
+const img_index = ref("");
+
+function handleChangeImg({ target }) {
+  img_index.value = `url(${img_src[target.dataset?.index ?? 0]})`;
+}
 </script>
 
 <template>
@@ -28,15 +35,20 @@ const img_src_thumbnail = [
     <template v-if="overlay">
       <X
         style="top: -3rem; right: 1rem; background-color: transparent"
-        @click="handleCancel"
+        @click="handleOverlay"
       />
       <ChevronLeft class="i-left" style="left: -1rem" @click="handleLeft" />
       <ChevronRight class="i-right" style="right: -1rem" @click="handleRight" />
     </template>
-    <div class="i transition flex center" @click="handleClick"></div>
+    <div class="i transition flex center" :style="{ '--img': img_index }"></div>
     <div class="s flex">
       <div class="thn" v-for="(src_thn, i) in img_src_thumbnail">
-        <img class="transition" :src="src_thn" />
+        <img
+          class="transition"
+          :src="src_thn"
+          :data-index="i"
+          @click="handleChangeImg"
+        />
       </div>
     </div>
   </div>
@@ -67,12 +79,11 @@ img {
 .i {
   height: 80%;
   border-radius: 0.5rem;
-  background-image: url("/image-product-1.jpg");
+  background-image: var(--img, url("/image-product-1.jpg"));
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
   justify-content: space-between;
-  /* background-position: 480px; */
 
   &:hover {
     background-size: 110% 110%;
