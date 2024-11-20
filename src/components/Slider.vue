@@ -4,10 +4,7 @@ import { ref } from "vue";
 
 const props = defineProps({
   overlay: Boolean,
-  handleLeft: Function,
-  handleRight: Function,
   handleOverlay: Function,
-  // handleChangeImg: Function,
 });
 
 const img_src = [
@@ -24,9 +21,22 @@ const img_src_thumbnail = [
 ];
 
 const img_index = ref("");
+let n = 0;
 
 function handleChangeImg({ target }) {
   img_index.value = `url(${img_src[target.dataset?.index ?? 0]})`;
+}
+
+function handleRight() {
+  n++;
+  n > img_src.length - 1 ? (n = 0) : void 0;
+  img_index.value = `url(${img_src[n ?? 0]})`;
+}
+
+function handleLeft() {
+  n--;
+  n < 0 ? (n = img_src.length - 1) : void 0;
+  img_index.value = `url(${img_src[n ?? 0]})`;
 }
 </script>
 
@@ -123,8 +133,8 @@ img {
   position: absolute;
   background-color: rgb(255 255 255 / 0.5);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   top: 40%;
   stroke: #1d2025;
 
