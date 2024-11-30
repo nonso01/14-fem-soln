@@ -145,7 +145,7 @@ function handleShowCart() {
 
 .main {
   margin-top: 3%;
-  width: 60%;
+  width: 80%;
   justify-content: space-between;
   align-items: center;
 }
@@ -163,7 +163,7 @@ function handleShowCart() {
 @media screen and (min-width: 1980px) {
   #app {
     .main {
-      width: min(60%, 1145px);
+      width: max(60%, 1145px);
     }
   }
 }
