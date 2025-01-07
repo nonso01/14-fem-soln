@@ -1,5 +1,5 @@
 <script setup>
-import { ShoppingCart } from "lucide-vue-next";
+import { ShoppingCart, Menu } from "lucide-vue-next";
 import { ref } from "vue";
 import Cart from "./Cart.vue";
 
@@ -18,6 +18,8 @@ function handleScrollNav({ target }) {
   scrollWidth.value = `${offsetWidth}px`;
   scrollLeft.value = `${offsetLeft}px`;
 }
+
+function handleShowMenu() {}
 </script>
 
 <template>
@@ -25,6 +27,7 @@ function handleScrollNav({ target }) {
   <div class="nav flex">
     <div class="l flex center">
       <div class="logo flex center">
+        <Menu class="logo-menu hide" stroke-width="3" />
         <img src="/logo.svg" alt="logo icon" />
       </div>
       <div class="links flex">
@@ -135,6 +138,38 @@ function handleScrollNav({ target }) {
   #app {
     .nav {
       width: min(75dvw, 1440px);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #app {
+    .nav {
+      width: 100%;
+      height: 80px;
+    }
+
+    .links {
+      display: none;
+    }
+
+    .logo-menu {
+      display: block;
+    }
+
+    .l {
+      width: 52%;
+      .logo {
+        width: 100%;
+        justify-content: space-evenly;
+      }
+    }
+
+    .i {
+      width: 30%;
+      .pfp {
+        width: 2.2rem;
+      }
     }
   }
 }

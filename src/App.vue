@@ -60,12 +60,6 @@ function handleShowCart() {
 }
 
 
-
-// function handleRight() {}
-// function handleLeft() {}
-// function handleCancel() {
-//   overlay.value = false;
-// }
 </script>
 
 <template>
@@ -168,10 +162,11 @@ function handleShowCart() {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   #app {
-    /* background-color: red; */
-    opacity: 0.5;
+    width: 100dvw;
+    /* border: 3px solid; */
+    /* opacity: 0.5; */
   }
 }
 </style>

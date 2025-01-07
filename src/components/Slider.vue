@@ -142,4 +142,12 @@ img {
     stroke: var(--orange);
   }
 }
+
+@media screen and (max-width: 500px) {
+  #app {
+    .slider {
+      opacity: 0.1;
+    }
+  }
+}
 </style>
