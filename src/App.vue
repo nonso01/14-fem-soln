@@ -58,8 +58,6 @@ function handleOverlay() {
 function handleShowCart() {
   showCart.value = !showCart.value;
 }
-
-
 </script>
 
 <template>
@@ -165,8 +163,12 @@ function handleShowCart() {
 @media screen and (max-width: 600px) {
   #app {
     width: 100dvw;
-    /* border: 3px solid; */
-    /* opacity: 0.5; */
+
+    .main {
+      width: 100%;
+      flex: 1;
+      margin: 0;
+    }
   }
 }
 </style>
