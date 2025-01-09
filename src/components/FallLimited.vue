@@ -161,8 +161,7 @@ const strokeColor = "#ff7d1a";
   #app {
     .f-l {
       width: 100%;
-      /* border-color: red; */
-      opacity: 0.1;
+      /* opacity: 0.1; */
     }
   }
 }

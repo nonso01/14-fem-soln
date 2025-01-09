@@ -18,6 +18,7 @@ const itemAddedCopy = ref(false);
 const itemDeleted = ref(false);
 const showCart = ref(false);
 const overlay = ref(false);
+const showMenu = ref(false);
 
 function handlePlus() {
   quantity.value += 1;
@@ -58,6 +59,11 @@ function handleOverlay() {
 function handleShowCart() {
   showCart.value = !showCart.value;
 }
+
+function handleShowMenu() {
+  showMenu.value = !showMenu.value;
+  // overlay.value = true
+}
 </script>
 
 <template>
@@ -69,7 +75,12 @@ function handleShowCart() {
     <Added v-if="itemDeleted"> items deleted </Added>
   </Transition>
 
-  <Nav :handle-show-cart="handleShowCart" :quantity="quantity_changed" />
+  <Nav
+    :handle-show-cart="handleShowCart"
+    :handleShowMenu="handleShowMenu"
+    :quantity="quantity_changed"
+    :showMenu="showCart"
+  />
 
   <Transition name="fade">
     <Cart
@@ -145,8 +156,8 @@ function handleShowCart() {
 @media screen and (max-width: 1280px) {
   #app {
     .main {
-      /* background-color: red; */
-      border: 2px solid red;
+
+      /* border: 2px solid red; */
       width: 80%;
     }
   }
@@ -168,6 +179,10 @@ function handleShowCart() {
       width: 100%;
       flex: 1;
       margin: 0;
+    }
+
+    .overlay {
+      display: none;
     }
   }
 }

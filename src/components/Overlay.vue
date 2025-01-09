@@ -13,6 +13,6 @@ html:has(div.o) {
   width: 100dvw;
   height: 100dvh;
   backdrop-filter: blur(0.3rem);
-  background-color: rgb(29 32 37 / 0.2);
+  background-color: rgb(29 32 37 / 0.4);
 }
 </style>

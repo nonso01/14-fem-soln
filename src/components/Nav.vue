@@ -1,11 +1,13 @@
 <script setup>
-import { ShoppingCart, Menu } from "lucide-vue-next";
+import { ShoppingCart, Menu, X } from "lucide-vue-next";
 import { ref } from "vue";
 import Cart from "./Cart.vue";
 
 const props = defineProps({
   handleShowCart: Function,
+  handleShowMenu: Function,
   quantity: Number,
+  showMenu: Boolean,
 });
 
 const scrollLeft = ref(0);
@@ -18,8 +20,6 @@ function handleScrollNav({ target }) {
   scrollWidth.value = `${offsetWidth}px`;
   scrollLeft.value = `${offsetLeft}px`;
 }
-
-function handleShowMenu() {}
 </script>
 
 <template>
@@ -27,10 +27,11 @@ function handleShowMenu() {}
   <div class="nav flex">
     <div class="l flex center">
       <div class="logo flex center">
-        <Menu class="logo-menu hide" stroke-width="3" />
+        <Menu class="logo-menu hide" stroke-width="3" @click="handleShowMenu" />
         <img src="/logo.svg" alt="logo icon" />
       </div>
       <div class="links flex">
+        <X class="hide link-cancel" stroke-width="3" @click="handleShowMenu" />
         <span
           class="nav-items transition pointer"
           v-for="item in list"
@@ -150,10 +151,29 @@ function handleShowMenu() {}
     }
 
     .links {
-      display: none;
+      /* display: none; */
+      /* background-color: red; */
+      background-color: white;
+      position: absolute;
+      z-index: 20;
+      width: 65dvw;
+      height: 100dvh;
+      top: 0;
+      padding: 5%;
+      flex-direction: column;
+      justify-content: normal;
+
+      .nav-items {
+        margin-block: 5%;
+        color: var(--very-dark-blue);
+      }
+      .link-cancel {
+        margin-bottom: 15%;
+      }
     }
 
-    .logo-menu {
+    .logo-menu,
+    .link-cancel {
       display: block;
     }
 
