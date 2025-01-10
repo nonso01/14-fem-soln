@@ -54,6 +54,7 @@ function handleDeleteCart() {
 
 function handleOverlay() {
   overlay.value = !overlay.value;
+  showMenu.value = !showMenu.value;
 }
 
 function handleShowCart() {
@@ -62,7 +63,8 @@ function handleShowCart() {
 
 function handleShowMenu() {
   showMenu.value = !showMenu.value;
-  // overlay.value = true
+  overlay.value = !overlay.value
+  console.log(showMenu.value)
 }
 </script>
 
@@ -79,7 +81,7 @@ function handleShowMenu() {
     :handle-show-cart="handleShowCart"
     :handleShowMenu="handleShowMenu"
     :quantity="quantity_changed"
-    :showMenu="showCart"
+    :showMenu="showMenu"
   />
 
   <Transition name="fade">

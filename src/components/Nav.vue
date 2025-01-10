@@ -30,7 +30,7 @@ function handleScrollNav({ target }) {
         <Menu class="logo-menu hide" stroke-width="3" @click="handleShowMenu" />
         <img src="/logo.svg" alt="logo icon" />
       </div>
-      <div class="links flex">
+      <div class="links flex" :class="{ m: showMenu }">
         <X class="hide link-cancel" stroke-width="3" @click="handleShowMenu" />
         <span
           class="nav-items transition pointer"
@@ -152,13 +152,14 @@ function handleScrollNav({ target }) {
 
     .links {
       /* display: none; */
-      /* background-color: red; */
       background-color: white;
       position: absolute;
       z-index: 20;
       width: 65dvw;
       height: 100dvh;
       top: 0;
+      left: -80%;
+      transition-duration: 200ms;
       padding: 5%;
       flex-direction: column;
       justify-content: normal;
@@ -170,6 +171,10 @@ function handleScrollNav({ target }) {
       .link-cancel {
         margin-bottom: 15%;
       }
+    }
+
+    .m {
+      left: 0;
     }
 
     .logo-menu,
