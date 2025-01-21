@@ -13,7 +13,7 @@ const strokeColor = "#ff7d1a";
 </script>
 
 <template>
-  <div class="f-l flex column">
+  <div class="f-l flex column bd">
     <div class="f-l-h flex column">
       <h3>Sneaker Company</h3>
       <h1>Fall Limited Edition Sneakers</h1>

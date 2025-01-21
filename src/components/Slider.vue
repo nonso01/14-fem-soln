@@ -41,7 +41,7 @@ function handleLeft() {
 </script>
 
 <template>
-  <div class="slider flex column bd">
+  <div class="slider flex column">
     <template v-if="overlay">
       <X
         style="top: -3rem; right: 1rem; background-color: transparent"
@@ -50,8 +50,15 @@ function handleLeft() {
       <ChevronLeft class="i-left" style="left: -1rem" @click="handleLeft" />
       <ChevronRight class="i-right" style="right: -1rem" @click="handleRight" />
     </template>
-    <div class="i transition flex center" :style="{ '--img': img_index }"></div>
-    <div class="s flex">
+    <div class="i transition flex center" :style="{ '--img': img_index }">
+      <ChevronLeft class="hide i-left" style="left: 2%" @click="handleLeft" />
+      <ChevronRight
+        class="hide i-right"
+        style="right: 2%"
+        @click="handleRight"
+      />
+    </div>
+    <div class="s bd flex" @click="handleOverlay">
       <div class="thn" v-for="(src_thn, i) in img_src_thumbnail">
         <img
           class="transition"
@@ -131,7 +138,7 @@ img {
 
 .lucide {
   position: absolute;
-  background-color: rgb(255 255 255 / 0.5);
+  background-color: rgba(255, 255, 255, 0.874);
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
@@ -146,8 +153,24 @@ img {
 @media screen and (max-width: 600px) {
   #app {
     .slider {
-      opacity: 0.9;
+      /* opacity: 0.9; */
       width: 100%;
+      height: 300px;
+      padding: 0;
+
+      .lucide {
+        display: block;
+      }
+
+      .i {
+        height: 100%;
+        border-radius: 0px;
+        background-size: 100%;
+      }
+
+      .s {
+        display: none;
+      }
     }
   }
 }

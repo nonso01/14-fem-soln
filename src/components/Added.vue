@@ -12,7 +12,7 @@ import { CircleCheckBig } from "lucide-vue-next";
 div {
   position: absolute;
   top: 10%;
-  z-index: 2;
+  z-index: 15;
   width: 7.5rem;
   height: 2rem;
   justify-content: space-around;

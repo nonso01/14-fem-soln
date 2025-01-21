@@ -105,8 +105,9 @@ p {
 @media screen and (max-width: 600px) {
   #app {
     .cart {
-      right: 6.5%;
-      top: 8%;
+      right: 50%;
+      transform: translateX(50%);
+      top: 9%;
     }
   }
 }

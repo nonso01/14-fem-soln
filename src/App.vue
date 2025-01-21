@@ -63,8 +63,8 @@ function handleShowCart() {
 
 function handleShowMenu() {
   showMenu.value = !showMenu.value;
-  overlay.value = !overlay.value
-  console.log(showMenu.value)
+  overlay.value = !overlay.value;
+  console.log(showMenu.value);
 }
 </script>
 
@@ -95,7 +95,7 @@ function handleShowMenu() {
   </Transition>
 
   <div class="main flex">
-    <Slider @click="handleOverlay" />
+    <Slider :handleOverlay="handleOverlay" />
     <!-- work on this issue on mobile -->
 
     <FallLimited
@@ -159,7 +159,6 @@ function handleShowMenu() {
 @media screen and (max-width: 1280px) {
   #app {
     .main {
-
       /* border: 2px solid red; */
       width: 80%;
     }
