@@ -146,7 +146,7 @@ img {
 @media screen and (max-width: 600px) {
   #app {
     .slider {
-      opacity: 0.1;
+      opacity: 0.9;
     }
   }
 }

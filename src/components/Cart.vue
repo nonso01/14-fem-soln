@@ -56,8 +56,10 @@ p {
   position: absolute;
   right: 12%;
   top: 11%;
+  z-index: 5;
   /* aspect-ratio: 1.5/1; */
   backdrop-filter: blur(0.325rem);
+  background-color: #ffffffaf;
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.15);
   border-radius: 0.625rem;
   justify-content: space-around;
@@ -97,6 +99,15 @@ p {
 
   .calc {
     width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #app {
+    .cart {
+      right: 6.5%;
+      top: 8%;
+    }
   }
 }
 </style>

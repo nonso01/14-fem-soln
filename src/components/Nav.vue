@@ -145,9 +145,15 @@ function handleScrollNav({ target }) {
 
 @media screen and (max-width: 600px) {
   #app {
+
+    .scroll-line {
+      display: none;
+    }
+
     .nav {
       width: 100%;
       height: 80px;
+      /* border: none; */
     }
 
     .links {

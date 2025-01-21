@@ -96,6 +96,7 @@ function handleShowMenu() {
 
   <div class="main flex">
     <Slider @click="handleOverlay" />
+    <!-- work on this issue on mobile -->
 
     <FallLimited
       :handle-plus="handlePlus"
@@ -181,6 +182,8 @@ function handleShowMenu() {
       width: 100%;
       flex: 1;
       margin: 0;
+
+      flex-direction: column;
     }
 
     .overlay {
