@@ -41,7 +41,7 @@ function handleLeft() {
 </script>
 
 <template>
-  <div class="slider flex column">
+  <div class="slider flex column bd">
     <template v-if="overlay">
       <X
         style="top: -3rem; right: 1rem; background-color: transparent"
@@ -147,6 +147,7 @@ img {
   #app {
     .slider {
       opacity: 0.9;
+      width: 100%;
     }
   }
 }
