@@ -14,18 +14,18 @@ const strokeColor = "#ff7d1a";
 
 <template>
   <div class="f-l flex column bd">
-    <div class="f-l-h flex column">
+    <div class="f-l-h flex column bd">
       <h3>Sneaker Company</h3>
       <h1>Fall Limited Edition Sneakers</h1>
     </div>
 
-    <div class="f-l-p flex column">
+    <div class="f-l-p flex column bd">
       <p>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
         weather can offer.
       </p>
-      <div class="prices flex">
+      <div class="prices flex ">
         <p class="flex">
           <span class="bold">$125.00</span>
           <span class="discount flex center"> 50%</span>
@@ -34,7 +34,7 @@ const strokeColor = "#ff7d1a";
       </div>
     </div>
 
-    <div class="f-l-b flex b">
+    <div class="f-l-b flex bd">
       <div class="quantity flex">
         <Plus :stroke="strokeColor" stroke-width="3" @click="handlePlus" />
         <span> {{ quantity }}</span>
