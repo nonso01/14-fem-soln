@@ -64,6 +64,7 @@ function handleLeft() {
           class="transition"
           :src="src_thn"
           :data-index="i"
+          loading="lazy"
           @click="handleChangeImg"
         />
       </div>

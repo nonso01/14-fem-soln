@@ -59,7 +59,7 @@ p {
   z-index: 5;
   /* aspect-ratio: 1.5/1; */
   backdrop-filter: blur(0.325rem);
-  background-color: #ffffffaf;
+  background-color: #ffffffd0;
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.15);
   border-radius: 0.625rem;
   justify-content: space-around;
@@ -81,12 +81,12 @@ p {
     justify-content: space-between;
   }
   .d-c {
-    height: 38%;
+    height: 34%;
     background-color: var(--orange);
     border-radius: 0.7rem;
     font-weight: bold;
     color: var(--very-dark-blue);
-    font-size: 1.1rem;
+    font-size: 1.08rem;
   }
 
   .image {
