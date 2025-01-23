@@ -58,7 +58,7 @@ function handleLeft() {
         @click="handleRight"
       />
     </div>
-    <div class="s bd flex" @click="handleOverlay">
+    <div class="s flex" @click="handleOverlay">
       <div class="thn" v-for="(src_thn, i) in img_src_thumbnail">
         <img
           class="transition"
@@ -154,9 +154,8 @@ img {
 @media screen and (max-width: 600px) {
   #app {
     .slider {
-      /* opacity: 0.9; */
       width: 100%;
-      height: 300px;
+      height: 18.75rem; /* 300px */
       padding: 0;
 
       .lucide {
