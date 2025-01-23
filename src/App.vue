@@ -144,6 +144,10 @@ function handleShowMenu() {
   transform: translate(-10%);
 }
 
+html:has(div.o) {
+  overflow: hidden !important;
+}
+
 #app {
   display: flex;
   flex-direction: column;

@@ -19,8 +19,9 @@
 }
 
 html {
-  min-height: 100dvh;
+  min-height: 100lvh;
   user-select: none;
+  scrollbar-gutter: stable;
   -moz-user-select: none;
   body,
   #app {

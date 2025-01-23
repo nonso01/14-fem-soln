@@ -3,16 +3,13 @@
 </template>
 
 <style scoped>
-html:has(div.o) {
-  overflow-y: hidden;
-  scrollbar-gutter: stable;
-}
+
 .o {
   position: absolute;
   z-index: 5;
   width: 100dvw;
-  height: 100dvh;
+  height: 100lvh;
   backdrop-filter: blur(0.3rem);
-  background-color: rgb(29 32 37 / 0.4);
+  background-color: rgba(29, 32, 37, 0.73);
 }
 </style>

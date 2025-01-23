@@ -207,7 +207,7 @@ const strokeColor = "#ff7d1a";
       flex-direction: column;
 
       div {
-        flex-grow: 0.4;
+        flex-grow: 0.36;
         &.add {
           box-shadow: 0 0.725rem 2rem #ff7d1a60;
         }
