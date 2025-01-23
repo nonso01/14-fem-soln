@@ -27,6 +27,7 @@ html {
     min-height: inherit;
     position: relative;
     place-items: center;
+    /* line-height: 1.3; */
   }
 }
 

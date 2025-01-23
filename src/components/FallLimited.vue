@@ -14,12 +14,12 @@ const strokeColor = "#ff7d1a";
 
 <template>
   <div class="f-l flex column">
-    <div class="f-l-h flex column bd">
-      <h3>Sneaker Company</h3>
+    <div class="f-l-h flex column">
+      <h3>SNEAKER COMPANY</h3>
       <h1>Fall Limited Edition Sneakers</h1>
     </div>
 
-    <div class="f-l-p flex column bd">
+    <div class="f-l-p flex column">
       <p>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
@@ -34,7 +34,7 @@ const strokeColor = "#ff7d1a";
       </div>
     </div>
 
-    <div class="f-l-b flex bd">
+    <div class="f-l-b flex">
       <div class="quantity flex">
         <Plus :stroke="strokeColor" stroke-width="3" @click="handlePlus" />
         <span> {{ quantity }}</span>
@@ -69,6 +69,10 @@ const strokeColor = "#ff7d1a";
     color: var(--dark-grayish-blue);
     line-height: 1.5;
     text-wrap: pretty;
+  }
+
+  h3 {
+    letter-spacing: 2px;
   }
 
   .strike {
@@ -125,13 +129,15 @@ const strokeColor = "#ff7d1a";
       justify-content: space-between;
       align-items: center;
       background-color: var(--light-grayish-blue);
-      border-radius: 0.5rem;
+      border-radius: 0.6rem;
       svg {
         cursor: pointer;
         margin-inline: 5%;
       }
       span {
         color: var(--very-dark-blue);
+        font-weight: bold;
+        font-size: 1.15rem;
       }
     }
 
@@ -140,12 +146,14 @@ const strokeColor = "#ff7d1a";
       justify-content: center;
       align-items: center;
       background-color: var(--orange);
-      border-radius: 0.5rem;
+      border-radius: 0.6rem;
       cursor: pointer;
       svg,
       span {
         margin-inline: 1ch;
         color: var(--very-dark-blue);
+        font-weight: bold;
+        font-size: 1.15rem;
       }
     }
   }
@@ -167,12 +175,42 @@ const strokeColor = "#ff7d1a";
 
     .f-l-h {
       h1 {
-        font-size: 2.15rem;
+        font-size: 2rem;
+      }
+      h3 {
+        font-size: 0.85rem;
       }
     }
 
     .f-l-p {
-      border-color: red;
+      .prices {
+        flex-direction: row;
+        align-items: center;
+
+        p.flex {
+          width: 50%;
+          align-items: center;
+        }
+
+        .strike {
+          font-size: 1.2rem;
+        }
+        .bold {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .f-l-b {
+      height: 25%;
+      flex-direction: column;
+
+      div {
+        flex-grow: 0.4;
+        &.add {
+          box-shadow: 0 0.725rem 2rem #ff7d1a60;
+        }
+      }
     }
   }
 }
