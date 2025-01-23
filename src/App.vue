@@ -64,7 +64,7 @@ function handleShowCart() {
 function handleShowMenu() {
   showMenu.value = !showMenu.value;
   overlay.value = !overlay.value;
-  console.log(showMenu.value);
+  // console.log(showMenu.value);
 }
 </script>
 

@@ -13,7 +13,7 @@ const strokeColor = "#ff7d1a";
 </script>
 
 <template>
-  <div class="f-l flex column bd">
+  <div class="f-l flex column">
     <div class="f-l-h flex column bd">
       <h3>Sneaker Company</h3>
       <h1>Fall Limited Edition Sneakers</h1>
@@ -25,7 +25,7 @@ const strokeColor = "#ff7d1a";
         Featuring a durable rubber outer sole, they'll withstand everything the
         weather can offer.
       </p>
-      <div class="prices flex ">
+      <div class="prices flex">
         <p class="flex">
           <span class="bold">$125.00</span>
           <span class="discount flex center"> 50%</span>
@@ -161,7 +161,18 @@ const strokeColor = "#ff7d1a";
   #app {
     .f-l {
       width: 100%;
-      /* opacity: 0.1; */
+      padding-inline: 4%;
+      justify-content: space-around;
+    }
+
+    .f-l-h {
+      h1 {
+        font-size: 2.15rem;
+      }
+    }
+
+    .f-l-p {
+      border-color: red;
     }
   }
 }
