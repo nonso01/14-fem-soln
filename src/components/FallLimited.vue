@@ -137,7 +137,7 @@ const strokeColor = "#ff7d1a";
       span {
         color: var(--very-dark-blue);
         font-weight: bold;
-        font-size: 1.15rem;
+        /* font-size: 1.15rem; */
       }
     }
 
@@ -153,7 +153,7 @@ const strokeColor = "#ff7d1a";
         margin-inline: 1ch;
         color: var(--very-dark-blue);
         font-weight: bold;
-        font-size: 1.15rem;
+        /* font-size: 1.15rem; */
       }
     }
   }
@@ -186,6 +186,7 @@ const strokeColor = "#ff7d1a";
       .prices {
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
 
         p.flex {
           width: 50%;
