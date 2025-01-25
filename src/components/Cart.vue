@@ -7,6 +7,10 @@ const props = defineProps({
   total: Number,
   added: Boolean,
 });
+
+function handleCheckout() {
+  location.replace("https://nonso-ref.netlify.app/");
+}
 </script>
 
 <template>
@@ -25,7 +29,9 @@ const props = defineProps({
           </div>
           <div><Trash2 stroke="#68707d" @click="handleDeleteCart" /></div>
         </div>
-        <div class="d-c flex center btn transition">Checkout</div>
+        <div class="d-c flex center btn transition" @click="handleCheckout">
+          Checkout
+        </div>
       </template>
     </div>
   </div>

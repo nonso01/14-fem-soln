@@ -63,6 +63,7 @@ function handleLeft() {
         <img
           class="transition"
           :src="src_thn"
+          alt="thumbnail"
           :data-index="i"
           loading="lazy"
           @click="handleChangeImg"
@@ -155,7 +156,7 @@ img {
   #app {
     .slider {
       width: 100%;
-      height: 18.75rem; /* 300px */
+      height: 18.75rem; 
       padding: 0;
 
       .lucide {
