@@ -105,10 +105,14 @@ p {
 @media screen and (max-width: 600px) {
   #app {
     .cart {
-      width: min(88%,22.5rem);
+      width: min(88%, 22.5rem);
       right: 50%;
       transform: translateX(50%);
       top: 9%;
+    }
+
+    .calc p {
+      font-size: 0.9rem;
     }
   }
 }

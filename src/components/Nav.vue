@@ -145,7 +145,6 @@ function handleScrollNav({ target }) {
 
 @media screen and (max-width: 600px) {
   #app {
-
     .scroll-line {
       display: none;
     }
@@ -173,7 +172,13 @@ function handleScrollNav({ target }) {
       .nav-items {
         margin-block: 5%;
         color: var(--very-dark-blue);
+
+        &:hover {
+          color: var(--orange);
+          transform: translateX(5%);
+        }
       }
+
       .link-cancel {
         margin-bottom: 15%;
       }
