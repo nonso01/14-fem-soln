@@ -151,7 +151,7 @@ img {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   #app {
     .slider {
       width: 100%;

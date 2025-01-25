@@ -28,7 +28,6 @@ html {
     min-height: inherit;
     position: relative;
     place-items: center;
-    /* line-height: 1.3; */
   }
 }
 
@@ -72,7 +71,3 @@ html {
 .hide {
   display: none;
 }
-
-/* @media screen and (max-width: 500px) {
-
-} */

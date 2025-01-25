@@ -52,12 +52,11 @@ p {
 
 .cart {
   width: 22.5rem;
-  height: 240px;
+  height: 15rem;
   position: absolute;
   right: 12%;
   top: 11%;
   z-index: 5;
-  /* aspect-ratio: 1.5/1; */
   backdrop-filter: blur(0.325rem);
   background-color: #ffffffd0;
   box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.15);
@@ -66,7 +65,7 @@ p {
 }
 .d {
   flex-grow: 0.65;
-  min-height: 168.5px;
+  min-height: 10.53rem;
   justify-content: space-around;
   padding-inline: 4%;
   border-top: 1px solid var(--grayish-blue);
@@ -90,7 +89,7 @@ p {
   }
 
   .image {
-    width: 50px;
+    width: 3.123rem;
     aspect-ratio: 1 / 1;
     background-image: url("/image-product-1-thumbnail.jpg");
     background-size: cover;
@@ -102,7 +101,7 @@ p {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   #app {
     .cart {
       width: min(88%, 22.5rem);

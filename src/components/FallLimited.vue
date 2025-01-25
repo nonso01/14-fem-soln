@@ -84,6 +84,7 @@ const strokeColor = "#ff7d1a";
     color: var(--very-dark-blue);
     font-size: x-large;
     font-weight: bold;
+    margin-right: 6%;
   }
 
   .discount {
@@ -92,7 +93,7 @@ const strokeColor = "#ff7d1a";
     font-weight: bold;
     width: 2.81rem;
     height: 1.875rem;
-    border-radius: 5px;
+    border-radius: 0.313rem;
   }
   .f-l-h {
     flex-grow: 0.05;
@@ -137,7 +138,6 @@ const strokeColor = "#ff7d1a";
       span {
         color: var(--very-dark-blue);
         font-weight: bold;
-        /* font-size: 1.15rem; */
       }
     }
 
@@ -153,19 +153,12 @@ const strokeColor = "#ff7d1a";
         margin-inline: 1ch;
         color: var(--very-dark-blue);
         font-weight: bold;
-        /* font-size: 1.15rem; */
       }
     }
   }
 }
 
-/* @media screen and (max-width: 1280px) {
-#app {
- 
-}
-} */
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   #app {
     .f-l {
       width: 100%;

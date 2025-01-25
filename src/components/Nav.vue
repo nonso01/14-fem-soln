@@ -62,7 +62,7 @@ function handleScrollNav({ target }) {
 .nav {
   position: relative;
   width: 75dvw;
-  height: 120px;
+  height: 7.5rem;
   justify-content: space-between;
   border-bottom: 1px solid var(--grayish-blue);
 
@@ -81,6 +81,10 @@ function handleScrollNav({ target }) {
           color: var(--very-dark-blue);
         }
       }
+    }
+
+    * {
+      margin-inline: 1%;
     }
   }
 
@@ -143,7 +147,7 @@ function handleScrollNav({ target }) {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   #app {
     .scroll-line {
       display: none;
@@ -151,12 +155,10 @@ function handleScrollNav({ target }) {
 
     .nav {
       width: 100%;
-      height: 80px;
-      /* border: none; */
+      height: 5rem;
     }
 
     .links {
-      /* display: none; */
       background-color: white;
       position: absolute;
       z-index: 20;
@@ -185,7 +187,7 @@ function handleScrollNav({ target }) {
     }
 
     .m {
-      left: 0;
+      left: -1%;
     }
 
     .logo-menu,
